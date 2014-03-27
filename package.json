@@ -10,15 +10,25 @@
         "url":  "git://github.com/davidcoallier/node-php.git"
     },
     "author" : "David Coallier <david.coallier@gmail.com>",
-    "main" : "lib/php.js",
-    "bin" : { 
+    "main" : "lib/nodephp.js",
+    "bin" : {
         "node-php" : "lib/cli-wrapper.js"
     },
+    "scripts": {
+        "lint": "node-lint lib/ --config=lint.json"
+    },
     "engines" : { "node" : "0.4 || 0.5" },
-    "dependencies": { "fastcgi": 1 },
+    "dependencies": {
+        "fastcgi-parser": "sendanor/node-fastcgi-parser",
+        "nor-debug": ">= 0.1.24 < 1.2.0"
+    },
     "bundleDependencies": ["fastcgi"],
     "licenses": [{
         "type": "BSD",
         "url" : "https://github.com/davidcoallier/node-php/LICENSE"
-    }]
+    }],
+  "devDependencies": {
+    "lint": "*",
+    "mocha": "*"
+  }
 }
